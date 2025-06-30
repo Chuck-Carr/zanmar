@@ -6,7 +6,7 @@ import { Input } from "../components/ui/input";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import Head from "next/head";
-import NavBar from "../components/Navbar";
+import NavBar from "@/components/NavBar";
 
 export default function HomePage() {
   return (
