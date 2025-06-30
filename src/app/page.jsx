@@ -6,6 +6,7 @@ import { Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
+import ContactForm from "@/components/contact";
 // import NavBar from "@/components/NavBar";
 
 export default function HomePage() {
@@ -54,7 +55,7 @@ export default function HomePage() {
 
       {/* <NavBar /> */}
 
-      <main className="bg-blue-50 text-blue-900 font-sans">
+      <main className="bg-blue-900 text-blue-900 font-sans">
         {/* Hero Section */}
         <section className="relative bg-blue-900 text-white">
           <img
@@ -77,7 +78,8 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              Fire protection and electronic security systems for Cincinnati homes and businesses.
+              Fire protection and electronic security systems for Cincinnati
+              homes and businesses.
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}
@@ -85,16 +87,17 @@ export default function HomePage() {
               transition={{ delay: 0.6, duration: 0.8 }}
             >
               <Link href="/contact" passHref>
-              <Button className="bg-blue-600 hover:bg-blue-700 px-12 py-4 text-lg font-semibold">
-                Request a Free Quote
-              </Button>
+                <Button className="bg-blue-600 hover:bg-blue-700 px-12 py-4 text-lg font-semibold">
+                  Request a Free Quote
+                </Button>
               </Link>
             </motion.div>
           </div>
         </section>
 
         {/* Services Section */}
-        <section className="max-w-6xl mx-auto px-6 py-20 bg-gradient-to-b from-blue-50 to-white">
+        {/* bg-gradient-to-b from-grey-500 to-white */}
+        <section className="max-w-6xl mx-auto px-6 py-20 bg-white">
           <h2 className="text-4xl font-semibold text-center text-blue-900 mb-16">
             Fire & Security Services
           </h2>
@@ -165,75 +168,24 @@ export default function HomePage() {
         </section>
 
         {/* About Section */}
-        <section className="bg-blue-50 py-20 px-6">
+        <section className="bg-blue-900 py-20 px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-semibold mb-6 text-blue-900">
+            <h2 className="text-3xl font-semibold mb-6 text-blue-100">
               Trusted Fire & Security Experts
             </h2>
-            <p className="text-base text-blue-800 leading-relaxed">
-              At Zanmar Protection, we deliver comprehensive life safety and security solutions for both residential and commercial properties.
-              Our NICET-certified technicians and security professionals serve homeowners, businesses, and property managers across Cincinnati
-              with fire alarms, camera systems, access control, and intrusion detection services.
+            <p className="text-base text-blue-100 leading-relaxed">
+              At Zanmar Protection, we deliver comprehensive life safety and
+              security solutions for both residential and commercial properties.
+              Our NICET-certified technicians and security professionals serve
+              homeowners, businesses, and property managers across Cincinnati
+              with fire alarms, camera systems, access control, and intrusion
+              detection services.
             </p>
           </div>
         </section>
 
         {/* Contact Section */}
-        <section className="max-w-4xl mx-auto px-6 py-20 bg-white rounded-lg shadow-md">
-          <h2 className="text-3xl font-semibold text-center mb-12 text-blue-900">
-            Request Service
-          </h2>
-          <div className="grid md:grid-cols-2 gap-16">
-            <form className="space-y-6">
-              <Input
-                placeholder="Full Name"
-                required
-                className="border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
-              />
-              <Input
-                type="email"
-                placeholder="Email Address"
-                required
-                className="border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
-              />
-              <Input
-                placeholder="Phone Number"
-                className="border border-blue-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
-              />
-              <textarea
-                placeholder="How can we help you?"
-                className="w-full p-4 border border-blue-300 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-600"
-                rows={5}
-                required
-              />
-              <Button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-700 w-full py-3 font-semibold rounded-md text-white transition"
-              >
-                Send Message
-              </Button>
-            </form>
-
-            <div className="flex flex-col justify-center space-y-8 text-blue-800 text-base">
-              <div className="flex items-center gap-3">
-                <Phone className="text-blue-600" size={24} />
-                <span>(513) 637-8580</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="text-blue-600" size={24} />
-                <span>contact@zanmarprotection.com</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Footer
-        <footer className="bg-blue-900 text-blue-200 py-8 text-center text-sm select-none">
-          <p>
-            &copy; {new Date().getFullYear()} Zanmar Protection. All rights reserved.
-          </p>
-          <p className="mt-2">Licensed • Insured • NICET-Certified</p>
-        </footer> */}
+        <ContactForm />
       </main>
     </>
   );
