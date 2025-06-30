@@ -1,6 +1,6 @@
 "use client";
 
-import Layout from "../../components/Layout";
+import Layout from "@/components/Layout";
 import { MapPin, Phone, Mail } from "lucide-react"; // adjust import paths as needed
 import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
