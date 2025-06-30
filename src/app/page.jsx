@@ -1,11 +1,12 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+// import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import NavBar from "../components/Navbar";
 
 export default function HomePage() {
   return (
@@ -33,7 +34,7 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <NavBar />
       <main className="bg-blue-50 text-blue-900 font-sans">
         {/* Hero Section */}
         <section className="relative bg-blue-900 text-white">
@@ -43,14 +44,14 @@ export default function HomePage() {
             className="absolute inset-0 w-full h-full object-cover brightness-50"
           />
           <div className="relative z-10 max-w-5xl mx-auto px-6 py-40 text-center">
-            <motion.img
+            {/* <motion.img
               src="/ZP_1.png"
               alt="Zanmar Protection Logo"
               className="mx-auto mb-10 w-72"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-            />
+            /> */}
             <motion.h1
               className="text-5xl font-extrabold mb-4 drop-shadow-md"
               initial={{ opacity: 0, y: -40 }}
@@ -180,13 +181,13 @@ export default function HomePage() {
             </form>
 
             <div className="flex flex-col justify-center space-y-8 text-blue-800 text-base">
-              <div className="flex items-center gap-3">
+              {/* <div className="flex items-center gap-3">
                 <MapPin className="text-blue-600" size={24} />
                 <span>123 Fire Lane, Cincinnati, OH 45202</span>
-              </div>
+              </div> */}
               <div className="flex items-center gap-3">
                 <Phone className="text-blue-600" size={24} />
-                <span>(513) 555-0199</span>
+                <span>(513) 637-8580</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="text-blue-600" size={24} />
