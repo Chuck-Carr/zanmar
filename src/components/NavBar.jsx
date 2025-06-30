@@ -8,12 +8,12 @@ export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const services = [
-    { href: "/fire-alarm", label: "Fire Alarm Systems" },
-    { href: "/fire-extinguishers", label: "Fire Extinguishers" },
-    { href: "/exit-lights", label: "Exit & Emergency Lights" },
-    { href: "/intrusion", label: "Intrusion Detection" },
-    { href: "/access-control", label: "Access Control" },
-    { href: "/cameras", label: "Cameras" },
+    { href: "/services/fire-alarms", label: "Fire Alarm Systems" },
+    { href: "/services/fire-extinguishers", label: "Fire Extinguishers" },
+    { href: "/services/exit-lights", label: "Exit & Emergency Lights" },
+    { href: "/services/intrusion-detection", label: "Intrusion Detection" },
+    { href: "/services/access-control", label: "Access Control" },
+    { href: "/services/camera-systems", label: "Cameras" },
   ];
 
   return (
@@ -27,7 +27,7 @@ export default function NavBar() {
             width={80}
             height={80}
           />
-          <span className="text-2xl font-bold text-blue-200">
+          <span className="text-2xl font-bold text-white">
             Zanmar Protection
           </span>
         </Link>
@@ -69,7 +69,7 @@ export default function NavBar() {
           {/* Desktop CTA Button */}
           <a
             href="tel:+1234567890"
-            className="ml-6 inline-flex items-center rounded bg-yellow-500 px-5 py-3 text-white font-semibold hover:bg-yellow-600 transition"
+            className="ml-6 inline-flex items-center rounded bg-red-600 px-5 py-3 text-white font-semibold hover:bg-red-700 transition"
           >
             Call Us: (513) 637-8580
           </a>
@@ -151,7 +151,7 @@ export default function NavBar() {
               <a
                 href="tel:+1234567890"
                 onClick={() => setMenuOpen(false)}
-                className="mt-4 block rounded bg-yellow-500 px-4 py-3 text-center text-white font-semibold hover:bg-yellow-600 transition"
+                className="mt-4 block rounded bg-red-600 px-4 py-3 text-center text-white font-semibold hover:bg-yellow-600 transition"
               >
                 Call Us: (513) 637-8580
               </a>
