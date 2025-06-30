@@ -1,14 +1,14 @@
 "use client";
 
-import NavBar from "./NavBar";
-import Footer from "./Footer";
+// import NavBar from "./NavBar";
+// import Footer from "./Footer";
 
 export default function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen">
-      <NavBar />
+      {/* <NavBar /> */}
       <main className="flex-grow p-6 max-w-6xl mx-auto">{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
