@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,12 +21,7 @@ export default function NavBar() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo and business name always visible */}
         <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/Logo_white.png"
-            alt="Zanmar Logo"
-            width={80}
-            height={80}
-          />
+          <img src="/Logo_white.png" alt="Zanmar Logo" width={80} height={80} />
           <span className="text-2xl font-bold text-white">
             Zanmar Protection
           </span>

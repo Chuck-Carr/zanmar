@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
 import ContactForm from "@/components/contact";
-
+import Script from "next/script";
 
 export default function HomePage() {
   return (
@@ -32,26 +32,7 @@ export default function HomePage() {
         <link rel="canonical" href="https://zanmarprotection.com/" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        {/* Google Analytics */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-R5QG7VBTHN"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-R5QG7VBTHN', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
       </Head>
-
-      {/* <NavBar /> */}
 
       <main className="bg-blue-900 text-blue-900 font-sans">
         {/* Hero Section */}
@@ -94,7 +75,6 @@ export default function HomePage() {
         </section>
 
         {/* Services Section */}
-        {/* bg-gradient-to-b from-grey-500 to-white */}
         <section className="max-w-6xl mx-auto px-6 py-20 bg-white">
           <h2 className="text-4xl font-semibold text-center text-blue-900 mb-16">
             Fire & Security Services
