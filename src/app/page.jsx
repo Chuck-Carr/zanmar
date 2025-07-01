@@ -1,13 +1,11 @@
 "use client";
 
 import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
-import { Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
 import ContactForm from "@/components/contact";
-// import NavBar from "@/components/NavBar";
+
 
 export default function HomePage() {
   return (

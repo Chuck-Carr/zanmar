@@ -4,10 +4,29 @@ export async function POST(req) {
   const body = await req.json();
   const { name, email, phone, message, captchaToken } = body;
 
-  if (!name || !email || !message) {
+  if (!name || !email || !phone || !message) {
     return new Response(JSON.stringify({ error: "Missing fields" }), {
       status: 400,
     });
+  }
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return new Response(JSON.stringify({ error: "Invalid email address" }), {
+      status: 400,
+    });
+  }
+
+  // Validate phone number (must be 10 digits)
+  const sanitizedPhone = phone.replace(/\D/g, "");
+  if (sanitizedPhone.length !== 10) {
+    return new Response(
+      JSON.stringify({ error: "Invalid phone number. Must be 10 digits." }),
+      {
+        status: 400,
+      }
+    );
   }
 
   if (!captchaToken) {
@@ -23,7 +42,6 @@ export async function POST(req) {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
-      body: `secret=${captcha_secret}&response=${captchaToken}`,
     }
   );
 
@@ -50,7 +68,7 @@ export async function POST(req) {
       html: `
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `,

@@ -3,7 +3,7 @@ import Layout from "../../components/Layout";
 export default function About() {
   return (
     <Layout>
-      <main className="max-w-6xl mx-auto px-6 py-12 text-blue-900">
+      <main className="max-w-6xl mx-auto px-6 py-30 text-blue-900">
         <h1 className="text-4xl font-bold mb-6">About Zanmar Protection</h1>
         <p className="mb-4 text-lg leading-relaxed">
           At Zanmar Protection, we are dedicated to safeguarding what matters

@@ -3,12 +3,13 @@
 import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Mail, Phone } from "lucide-react";
 
 export default function ContactForm() {
   const [status, setStatus] = useState("");
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
   const [recaptchaReady, setRecaptchaReady] = useState(false);
-  console.log("reCAPTCHA site key:", siteKey);
+  // console.log("reCAPTCHA site key:", siteKey);
 
   useEffect(() => {
     const loadRecaptcha = () => {
@@ -20,7 +21,7 @@ export default function ContactForm() {
         script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
         script.async = true;
         script.onload = () => {
-          console.log("✅ reCAPTCHA script loaded");
+          // console.log("✅ reCAPTCHA script loaded");
           setRecaptchaReady(true);
         };
         document.body.appendChild(script);
@@ -44,7 +45,7 @@ export default function ContactForm() {
     }
 
     try {
-      console.log("🚀 Running grecaptcha.execute");
+      // console.log("🚀 Running grecaptcha.execute");
       const token = await window.grecaptcha.execute(siteKey, {
         action: "submit",
       });
@@ -78,7 +79,7 @@ export default function ContactForm() {
       }
     } catch (error) {
       setStatus("Error submitting form.");
-      console.error("❌ Submission error:", error);
+      // console.error("❌ Submission error:", error);
     }
   };
 
@@ -124,6 +125,16 @@ export default function ContactForm() {
             <p className="text-center text-sm text-gray-700 mt-2">{status}</p>
           )}
         </form>
+        <div className="flex flex-col justify-start space-y-8 text-blue-800 text-base">
+          <div className="flex items-center gap-3">
+            <Phone className="text-blue-600" size={24} />
+            <span>(513) 637-8580</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <Mail className="text-blue-600" size={24} />
+            <span>contact@zanmarprotection.com</span>
+          </div>
+        </div>
       </div>
     </section>
   );
