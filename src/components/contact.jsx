@@ -65,10 +65,10 @@ export default function ContactForm() {
             <Phone className="text-blue-600" size={24} />
             <span>(513) 637-8580</span>
           </div>
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <Mail className="text-blue-600" size={24} />
             <span>contact@zanmarprotection.com</span>
-          </div>
+          </div> */}
         </div>
       </div>
       {status && (
