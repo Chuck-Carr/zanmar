@@ -17,32 +17,38 @@ export default function NavBar() {
   ];
 
   return (
-    <header className="bg-blue-900 shadow sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-slate-700 shadow-xl backdrop-blur-xl bg-slate-900">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo and business name always visible */}
-        <Link href="/" className="flex items-center gap-2">
-          <img src="/Logo_white.png" alt="Zanmar Logo" width={80} height={80} />
-          <span className="text-2xl font-bold text-white">
+        <Link href="/" className="flex items-center gap-3 group">
+          <img 
+            src="/Logo_white.png" 
+            alt="Zanmar Logo" 
+            width={80} 
+            height={80} 
+            className="transition-transform duration-300 group-hover:scale-110"
+          />
+          <span className="text-2xl font-bold text-white tracking-tight">
             Zanmar Protection
           </span>
         </Link>
 
         {/* Desktop nav links + CTA */}
-        <nav className="hidden md:flex space-x-8 text-blue-200 font-medium items-center">
+        <nav className="hidden md:flex space-x-8 text-slate-200 font-medium items-center">
           {/* <Link href="/" className="hover:text-white transition">
             Home
           </Link> */}
 
           <div className="relative group">
-            <span className="cursor-pointer hover:text-white transition">
+            <span className="cursor-pointer hover:text-white transition-all duration-300 hover:scale-105">
               Services
             </span>
-            <ul className="absolute left-0 mt-2 bg-blue-900 border border-blue-700 rounded shadow-md text-sm w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-1 z-50">
+            <ul className="absolute left-0 mt-2 bg-slate-900/95 backdrop-blur-xl border border-white/20 rounded-lg shadow-2xl text-sm w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
               {services.map(({ href, label }) => (
                 <li key={href}>
                   <Link
                     href={href}
-                    className="block px-4 py-2 hover:bg-blue-700 hover:text-white transition"
+                    className="block px-5 py-3 hover:bg-red-500/20 hover:text-white transition-all duration-200 rounded-md mx-2 my-1 border border-transparent hover:border-red-500/30"
                   >
                     {label}
                   </Link>
@@ -51,22 +57,22 @@ export default function NavBar() {
             </ul>
           </div>
 
-          <Link href="/about" className="hover:text-white transition">
+          <Link href="/about" className="hover:text-white transition-all duration-300 hover:scale-105">
             About
           </Link>
-          <Link href="/blog" className="hover:text-white transition">
+          <Link href="/blog" className="hover:text-white transition-all duration-300 hover:scale-105">
             Blog
           </Link>
-          <Link href="/contact" className="hover:text-white transition">
+          <Link href="/contact" className="hover:text-white transition-all duration-300 hover:scale-105">
             Contact
           </Link>
 
           {/* Desktop CTA Button */}
           <a
-            href="tel:+1234567890"
-            className="ml-6 inline-flex items-center rounded bg-red-600 px-5 py-3 text-white font-semibold hover:bg-red-700 transition"
+            href="tel:+15135974332"
+            className="ml-6 inline-flex items-center rounded-lg bg-gradient-to-r from-red-600 to-red-700 px-6 py-3 text-white font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
-            Call Us: (513) 637-8580
+            Call Us: (513) 597-4332
           </a>
         </nav>
 
@@ -84,8 +90,8 @@ export default function NavBar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <nav className="md:hidden bg-blue-900 shadow-md">
-          <ul className="flex flex-col space-y-2 px-6 py-4 text-blue-200 font-medium">
+        <nav className="md:hidden bg-slate-900/95 backdrop-blur-xl shadow-2xl border-t border-white/10">
+          <ul className="flex flex-col space-y-2 px-6 py-4 text-slate-200 font-medium">
             <li>
               {/* <Link
                 href="/"
@@ -144,11 +150,11 @@ export default function NavBar() {
             {/* CTA button in mobile menu */}
             <li>
               <a
-                href="tel:+1234567890"
+                href="tel:+15135974332"
                 onClick={() => setMenuOpen(false)}
-                className="mt-4 block rounded bg-red-600 px-4 py-3 text-center text-white font-semibold hover:bg-yellow-600 transition"
+                className="mt-4 block rounded-lg bg-gradient-to-r from-red-600 to-red-700 px-4 py-3 text-center text-white font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg"
               >
-                Call Us: (513) 637-8580
+                Call Us: (513) 597-4332
               </a>
             </li>
           </ul>

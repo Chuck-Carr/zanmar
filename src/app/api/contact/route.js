@@ -2,7 +2,7 @@ import { Resend } from "resend";
 
 export async function POST(req) {
   const body = await req.json();
-  const { name, email, phone, message, captchaToken } = body;
+  const { name, email, phone, message } = body;
 
   if (!name || !email || !phone || !message) {
     return new Response(JSON.stringify({ error: "Missing fields" }), {
@@ -29,40 +29,13 @@ export async function POST(req) {
     );
   }
 
-  if (!captchaToken) {
-    return new Response(JSON.stringify({ error: "Captcha token missing" }), {
-      status: 400,
-    });
-  }
-
-  // Verify captcha token with Google
-  const verifyRes = await fetch(
-    "https://www.google.com/recaptcha/api/siteverify",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
-    }
-  );
-
-  const verifyData = await verifyRes.json();
-  console.log("Google reCAPTCHA response:", verifyData);
-
-  if (!verifyData.success || (verifyData.score && verifyData.score < 0.5)) {
-    return new Response(
-      JSON.stringify({ error: "Captcha verification failed" }),
-      {
-        status: 400,
-      }
-    );
-  }
-
   const resend = new Resend(process.env.RESEND_API_KEY);
+  const recipientEmail = process.env.CONTACT_EMAIL || "ccarr@zanmarprotection.com";
 
   try {
     await resend.emails.send({
-      from: "Zanmar Contact <contact@zanmarprotection.com>",
-      to: "ccarr@zanmarprotection.com",
+      from: "Zanmar Protection <noreply@zanmarprotection.com>",
+      to: recipientEmail,
       subject: `New Contact Form Submission from ${name}`,
       reply_to: email,
       html: `
