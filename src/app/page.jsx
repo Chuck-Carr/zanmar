@@ -2,40 +2,13 @@
 
 import { Button } from "../components/ui/button";
 import { motion } from "framer-motion";
-import Head from "next/head";
 import Link from "next/link";
 import ContactForm from "@/components/contact";
-import Script from "next/script";
 import { Flame, Shield, Camera, Lock, Bell, Lightbulb } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <>
-      <Head>
-        <title>Fire Alarm Inspection & Service | NICET Certified | Cincinnati OH</title>
-        <meta
-          name="description"
-          content="Professional fire alarm inspection, monitoring, and code compliance services in Cincinnati. NICET-certified technicians specializing in fire alarm system testing, service, and installation. Licensed & insured."
-        />
-        <meta
-          name="keywords"
-          content="fire alarm inspection Cincinnati, fire alarm service, fire alarm monitoring, NICET certified, code compliance, fire alarm testing, fire alarm installation, Cincinnati fire protection, commercial fire alarm"
-        />
-        <meta
-          property="og:title"
-          content="Fire Alarm Inspection & Service | NICET Certified | Cincinnati OH"
-        />
-        <meta
-          property="og:description"
-          content="Professional fire alarm inspection, monitoring, and code compliance services throughout Greater Cincinnati. NICET-certified technicians."
-        />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://zanmarprotection.com/" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="bg-gradient-to-b from-slate-50 to-white text-slate-900 font-sans">
+    <main className="bg-gradient-to-b from-slate-50 to-white text-slate-900 font-sans">
         {/* Hero Section */}
         <section className="relative bg-slate-900 text-white overflow-hidden">
           {/* Background Image with Gradient Overlay */}
@@ -110,7 +83,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <a 
-                  href="tel:+15135974332"
+                  href="tel:+15132162700"
                   className="inline-flex items-center gap-2 px-10 py-4 text-lg font-semibold text-white border-2 border-white/30 rounded-md hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -164,7 +137,7 @@ export default function HomePage() {
               {
                 title: "Exit & Emergency Lighting",
                 description:
-                  "Emergency lighting inspection and testing services. Monthly and annual compliance testing with complete documentation to satisfy code requirements.",
+                  "Emergency lighting inspection and testing services. Annual compliance testing with complete documentation to satisfy code requirements.",
                 image: "/exit-light.jpg",
                 href: "/services/exit-lights",
                 icon: Lightbulb,
@@ -323,6 +296,5 @@ export default function HomePage() {
         {/* Contact Section */}
         <ContactForm />
       </main>
-    </>
   );
 }

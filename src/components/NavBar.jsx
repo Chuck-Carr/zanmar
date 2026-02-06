@@ -69,10 +69,10 @@ export default function NavBar() {
 
           {/* Desktop CTA Button */}
           <a
-            href="tel:+15135974332"
+            href="tel:+15132162700"
             className="ml-6 inline-flex items-center rounded-lg bg-gradient-to-r from-red-600 to-red-700 px-6 py-3 text-white font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
-            Call Us: (513) 597-4332
+            Call Us: (513) 216-2700
           </a>
         </nav>
 
@@ -150,11 +150,11 @@ export default function NavBar() {
             {/* CTA button in mobile menu */}
             <li>
               <a
-                href="tel:+15135974332"
+                href="tel:+15132162700"
                 onClick={() => setMenuOpen(false)}
                 className="mt-4 block rounded-lg bg-gradient-to-r from-red-600 to-red-700 px-4 py-3 text-center text-white font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg"
               >
-                Call Us: (513) 597-4332
+                Call Us: (513) 216-2700
               </a>
             </li>
           </ul>

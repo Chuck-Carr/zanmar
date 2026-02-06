@@ -1,9 +1,7 @@
 "use client";
 
-import Head from "next/head";
 import ServiceLayout from "@/components/ServiceLayout";
 import { Bell } from "lucide-react";
-import Script from "next/script";
 
 export default function FireAlarmsPage() {
   const features = [
@@ -18,33 +16,7 @@ export default function FireAlarmsPage() {
   ];
 
   return (
-    <>
-      <Head>
-        {/* <!-- Google tag (gtag.js) --> */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-R5QG7VBTHN"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-R5QG7VBTHN');
-        `}
-        </Script>
-        <title>Fire Alarm Inspection & Testing Services | Cincinnati OH | Zanmar Protection</title>
-        <meta
-          name="description"
-          content="Professional fire alarm inspection, testing, monitoring, and code compliance services in Cincinnati. NICET-certified technicians specializing in commercial fire alarm systems. Expert installation and 24/7 monitoring available."
-        />
-        <link
-          rel="canonical"
-          href="https://zanmarprotection.com/services/fire-alarms"
-        />
-      </Head>
-
-      <ServiceLayout
+    <ServiceLayout
         title="Fire Alarm Inspection & Service"
         description="Specialized fire alarm inspection, testing, monitoring, and code compliance services for commercial and residential properties. Our NICET-certified technicians provide expert fire alarm system service, annual testing, code violation corrections, and professional installation throughout Greater Cincinnati."
         image="/pull_station.webp"
@@ -53,6 +25,5 @@ export default function FireAlarmsPage() {
         ctaText="Schedule Fire Alarm Inspection"
         icon={Bell}
       />
-    </>
   );
 }

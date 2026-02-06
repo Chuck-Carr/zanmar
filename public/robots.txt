@@ -1,0 +1,6 @@
+# Robots.txt for Zanmar Protection
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://zanmarprotection.com/sitemap.xml
